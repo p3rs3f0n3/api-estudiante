@@ -9,6 +9,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATOS_PATH = os.path.join(BASE_DIR, 'Datos_Estudiante.json')
 HORARIOS_PATH = os.path.join(BASE_DIR, 'Horarios_Estudiante.json')
 
+@app.get("/")
+def root():
+    return {"mensaje": "Bienvenido a la API de Estudiante. Endpoints disponibles: /datos_estudiante y /horarios_estudiante"}
+
 @app.get("/datos_estudiante")
 def get_datos_estudiante():
     try:
